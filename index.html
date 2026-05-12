@@ -1,12 +1,294 @@
-<!-- ========================= -->
-<!-- HERO MELHORADO -->
-<!-- ========================= -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>4Grow Digital</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#08111f;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    section{
+      padding:80px 20px;
+      position:relative;
+      z-index:1;
+    }
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .blue{
+      color:#00c8ff;
+    }
+
+    .hero-btns{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom:30px;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+      padding:14px 24px;
+      border-radius:12px;
+      font-weight:bold;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .btn-primary{
+      background:linear-gradient(90deg,#00c8ff,#1e90ff);
+      color:#fff;
+    }
+
+    .btn-secondary{
+      border:1px solid rgba(255,255,255,.2);
+      color:#fff;
+    }
+
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:25px;
+      color:#8eb4e3;
+    }
+
+    .hero-badge span{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#00e5a0;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:80px;
+      align-items:center;
+      max-width:1300px;
+      margin:auto;
+    }
+
+    .hero-title{
+      font-size:clamp(3rem,8vw,6rem);
+      line-height:.95;
+      margin-bottom:24px;
+    }
+
+    .hero-sub{
+      font-size:1.1rem;
+      color:#8eb4e3;
+      max-width:560px;
+      line-height:1.7;
+      margin-bottom:36px;
+    }
+
+    .earnings-box{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-top:36px;
+    }
+
+    .earn-card{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(0,200,255,.1);
+      border-radius:14px;
+      padding:16px 22px;
+    }
+
+    .earn-card strong{
+      display:block;
+      margin-bottom:4px;
+    }
+
+    .earn-card span{
+      color:#00e5a0;
+      font-weight:800;
+    }
+
+    .hero-stats{
+      display:flex;
+      gap:30px;
+      margin-top:40px;
+      flex-wrap:wrap;
+    }
+
+    .stat-num{
+      font-size:2rem;
+      font-weight:900;
+      color:#00c8ff;
+    }
+
+    .stat-label{
+      color:#8eb4e3;
+    }
+
+    .dashboard-mockup{
+      width:100%;
+      max-width:500px;
+      background:rgba(15,25,50,.75);
+      border:1px solid rgba(0,200,255,.15);
+      backdrop-filter:blur(24px);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:
+        0 20px 80px rgba(0,0,0,.4),
+        0 0 60px rgba(0,170,255,.12);
+    }
+
+    .dash-top{
+      display:flex;
+      gap:10px;
+      padding:18px 20px;
+      border-bottom:1px solid rgba(255,255,255,.05);
+    }
+
+    .dot{
+      width:12px;
+      height:12px;
+      border-radius:50%;
+    }
+
+    .red{background:#ff5f57}
+    .yellow{background:#febc2e}
+    .green{background:#28c840}
+
+    .dash-content{
+      padding:28px;
+    }
+
+    .dash-card{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.05);
+      border-radius:18px;
+      padding:24px;
+      margin-bottom:18px;
+    }
+
+    .dash-card span{
+      color:#7a9cc8;
+      font-size:.85rem;
+    }
+
+    .dash-card h2{
+      font-size:2rem;
+      margin-top:8px;
+    }
+
+    .gold{
+      color:#ffd700;
+    }
+
+    .progress-top{
+      display:flex;
+      justify-content:space-between;
+      margin-bottom:10px;
+    }
+
+    .progress-bar{
+      width:100%;
+      height:12px;
+      border-radius:20px;
+      background:rgba(255,255,255,.05);
+      overflow:hidden;
+    }
+
+    .progress-fill{
+      width:82%;
+      height:100%;
+      border-radius:20px;
+      background:linear-gradient(
+        90deg,
+        #00c8ff,
+        #1e90ff
+      );
+    }
+
+    #how{
+      background:#08111f;
+    }
+
+    .section-title{
+      font-size:2.5rem;
+      margin-top:10px;
+    }
+
+    .section-label{
+      color:#00c8ff;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+    }
+
+    .how-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:24px;
+      margin-top:56px;
+    }
+
+    .how-card{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(0,170,255,.08);
+      border-radius:18px;
+      padding:32px;
+    }
+
+    .how-num{
+      font-size:3rem;
+      font-weight:900;
+      color:#00c8ff;
+      margin-bottom:16px;
+    }
+
+    .how-card p{
+      color:#7a9cc8;
+      line-height:1.6;
+    }
+
+    @media(max-width:980px){
+
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-right{
+        order:-1;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
 
 <section id="hero">
 
   <div class="hero-grid">
 
-    <!-- LEFT -->
     <div class="hero-left">
 
       <div class="hero-badge">
@@ -25,7 +307,7 @@
       </p>
 
       <div class="hero-btns">
-        <a href="4grow-cadastro.html" class="btn-primary">
+        <a href="#" class="btn-primary">
           🚀 COMEÇAR AGORA
         </a>
 
@@ -34,7 +316,6 @@
         </a>
       </div>
 
-      <!-- GANHOS -->
       <div class="earnings-box">
 
         <div class="earn-card">
@@ -54,20 +335,19 @@
 
       </div>
 
-      <!-- STATS -->
       <div class="hero-stats">
 
-        <div class="stat-item">
+        <div>
           <div class="stat-num">7+</div>
           <div class="stat-label">Operadoras</div>
         </div>
 
-        <div class="stat-item">
+        <div>
           <div class="stat-num">R$50</div>
           <div class="stat-label">Por Venda</div>
         </div>
 
-        <div class="stat-item">
+        <div>
           <div class="stat-num">24H</div>
           <div class="stat-label">Suporte</div>
         </div>
@@ -76,7 +356,6 @@
 
     </div>
 
-    <!-- RIGHT -->
     <div class="hero-right">
 
       <div class="dashboard-mockup">
@@ -89,7 +368,7 @@
 
         <div class="dash-content">
 
-          <div class="dash-card glow">
+          <div class="dash-card">
             <span>Total de Vendas</span>
             <h2>48</h2>
           </div>
@@ -104,15 +383,13 @@
             <h2 class="gold">OURO</h2>
           </div>
 
-          <div class="dash-progress">
-            <div class="progress-top">
-              <span>Meta Mensal</span>
-              <strong>82%</strong>
-            </div>
+          <div class="progress-top">
+            <span>Meta Mensal</span>
+            <strong>82%</strong>
+          </div>
 
-            <div class="progress-bar">
-              <div class="progress-fill"></div>
-            </div>
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
           </div>
 
         </div>
@@ -123,61 +400,44 @@
 
   </div>
 
-  <!-- BG GLOW -->
-  <div class="hero-bg-glow"></div>
-
 </section>
-
-<!-- ========================= -->
-<!-- COMO FUNCIONA -->
-<!-- ========================= -->
 
 <section id="how">
 
   <div class="container">
 
-    <div class="reveal">
-      <span class="section-label">
-        Como Funciona
-      </span>
+    <span class="section-label">
+      Como Funciona
+    </span>
 
-      <h2 class="section-title">
-        Comece em poucos passos
-      </h2>
-    </div>
+    <h2 class="section-title">
+      Comece em poucos passos
+    </h2>
 
     <div class="how-grid">
 
-      <div class="how-card reveal">
+      <div class="how-card">
         <div class="how-num">01</div>
         <h3>Cadastre-se</h3>
-        <p>
-          Crie sua conta gratuitamente na plataforma.
-        </p>
+        <p>Crie sua conta gratuitamente na plataforma.</p>
       </div>
 
-      <div class="how-card reveal">
+      <div class="how-card">
         <div class="how-num">02</div>
         <h3>Envie Clientes</h3>
-        <p>
-          Cadastre leads interessados em internet fibra.
-        </p>
+        <p>Cadastre leads interessados em internet fibra.</p>
       </div>
 
-      <div class="how-card reveal">
+      <div class="how-card">
         <div class="how-num">03</div>
         <h3>Instalação</h3>
-        <p>
-          A operadora realiza a instalação no cliente.
-        </p>
+        <p>A operadora realiza a instalação no cliente.</p>
       </div>
 
-      <div class="how-card reveal">
+      <div class="how-card">
         <div class="how-num">04</div>
         <h3>Receba via PIX</h3>
-        <p>
-          Comissão liberada automaticamente após aprovação.
-        </p>
+        <p>Comissão liberada automaticamente após aprovação.</p>
       </div>
 
     </div>
@@ -186,338 +446,5 @@
 
 </section>
 
-<!-- HERO WIDGET -->
-<div class="hero-widget">
-  <div>
-    <strong>🔥 Você está entre os melhores afiliados da plataforma</strong>
-    <span>Continue vendendo para alcançar o nível Ouro e desbloquear benefícios exclusivos.</span>
-  </div>
-
-  <div class="hero-badge">
-    TOP AFILIADO
-  </div>
-</div>
-
-<!-- META -->
-<div class="meta-box">
-  <div class="meta-header">
-    <span>Meta do mês</span>
-    <span>18 / 20 vendas</span>
-  </div>
-
-  <div class="meta-progress">
-    <div class="meta-fill"></div>
-  </div>
-</div>
-
-<!-- ADICIONE ESSE BLOCO ABAIXO DA TOPBAR -->
-<div class="floating-actions">
-  <button onclick="copyAffiliateLink()">📋 Copiar Link</button>
-  <button onclick="shareWhats()">📲 WhatsApp</button>
-</div>
-
-<!-- ADICIONE ESSE BLOCO NO DASHBOARD APÓS O RANK-BANNER -->
-<div class="dash-card destaque-card">
-  <div class="destaque-left">
-    <div>
-      <span class="destaque-mini">SEU LINK DE AFILIADO</span>
-      <h3>Compartilhe e ganhe comissões 🚀</h3>
-    </div>
-
-    <div class="affiliate-box">
-      <input
-        type="text"
-        id="affiliateLink"
-        readonly
-        value="https://4growdigital.com/afiliado/joao123"
-      />
-
-      <button onclick="copyAffiliateLink()">
-        📋 Copiar
-      </button>
-
-      <button onclick="shareWhats()">
-        📲 WhatsApp
-      </button>
-    </div>
-  </div>
-
-  <div class="affiliate-qrcode">
-    <img
-      src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://4growdigital.com/afiliado/joao123"
-    />
-  </div>
-</div>
-
-<!-- ADICIONE ABAIXO DOS STATS -->
-<div class="meta-card">
-  <div class="meta-top">
-    <strong>🎯 Meta do mês</strong>
-    <span>18 / 25 vendas</span>
-  </div>
-
-  <div class="meta-bar">
-    <div class="meta-fill"></div>
-  </div>
-
-  <p>
-    Faltam apenas <strong>7 vendas</strong> para ganhar
-    <strong>R$300 extras</strong>
-  </p>
-</div>
-
-<!-- BUSCAR CLIENTES -->
-<div class="dash-card" style="margin-bottom:20px">
-  <div class="dash-card-header">
-    <div class="dash-card-title">Buscar Clientes</div>
-  </div>
-
-  <div class="search-row">
-    <input
-      type="text"
-      placeholder="Buscar cliente..."
-      id="searchClient"
-      onkeyup="searchClients()"
-    />
-
-    <select id="filterStatus" onchange="searchClients()">
-      <option value="">Todos status</option>
-      <option value="Novo">Novo</option>
-      <option value="Em análise">Em análise</option>
-      <option value="Aprovado">Aprovado</option>
-      <option value="Instalado">Instalado</option>
-    </select>
-  </div>
-</div>
-
-<!-- MENU MATERIAIS -->
-<a class="nav-item" onclick="showPage('materiais',this)">
-  <span class="ni-icon">🎨</span>
-  <span>Materiais</span>
-</a>
-
-<!-- PÁGINA MATERIAIS -->
-<div class="page-view" id="page-materiais">
-
-  <div class="greeting">
-    <h2>Materiais de Divulgação 🎨</h2>
-    <p>Use os materiais prontos para vender mais.</p>
-  </div>
-
-  <div class="materials-grid">
-
-    <div class="material-card">
-      <div class="material-icon">📸</div>
-      <strong>Artes Instagram</strong>
-      <p>Posts prontos para divulgação.</p>
-      <button class="btn-add">Baixar</button>
-    </div>
-
-    <div class="material-card">
-      <div class="material-icon">🎥</div>
-      <strong>Vídeos Prontos</strong>
-      <p>Vídeos para status e reels.</p>
-      <button class="btn-add">Baixar</button>
-    </div>
-
-    <div class="material-card">
-      <div class="material-icon">💬</div>
-      <strong>Textos WhatsApp</strong>
-      <p>Mensagens prontas para clientes.</p>
-      <button class="btn-add">Copiar</button>
-    </div>
-
-  </div>
-</div>
-
-<!-- DASHBOARD CHART -->
-<div class="acard">
-  <div class="acard-header">
-    <div class="acard-title">Desempenho de Vendas</div>
-  </div>
-
-  <canvas id="salesChart" height="100"></canvas>
-</div>
-
-<style>
-
-/* HERO GRID */
-.hero-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
-  align-items:center;
-  max-width:1300px;
-  margin:auto;
-}
-
-.hero-left{
-  position:relative;
-  z-index:2;
-}
-
-.hero-right{
-  position:relative;
-  display:flex;
-  justify-content:center;
-}
-
-/* TITULO */
-.hero-title{
-  font-size:clamp(3rem,8vw,6.5rem);
-  line-height:.95;
-  margin-bottom:24px;
-}
-
-/* SUB */
-.hero-sub{
-  font-size:1.1rem;
-  color:#8eb4e3;
-  max-width:560px;
-  line-height:1.7;
-  margin-bottom:36px;
-}
-
-/* DASHBOARD */
-.dashboard-mockup{
-  width:100%;
-  max-width:500px;
-  background:rgba(15,25,50,.75);
-  border:1px solid rgba(0,200,255,.15);
-  backdrop-filter:blur(24px);
-  border-radius:24px;
-  overflow:hidden;
-  box-shadow:
-    0 20px 80px rgba(0,0,0,.4),
-    0 0 60px rgba(0,170,255,.12);
-  animation:float 6s ease-in-out infinite;
-}
-
-.dash-top{
-  display:flex;
-  gap:10px;
-  padding:18px 20px;
-  border-bottom:1px solid rgba(255,255,255,.05);
-}
-
-.dot{
-  width:12px;
-  height:12px;
-  border-radius:50%;
-}
-
-.red{background:#ff5f57}
-.yellow{background:#febc2e}
-.green{background:#28c840}
-
-.dash-content{
-  padding:28px;
-}
-
-.dash-card{
-  background:rgba(255,255,255,.03);
-  border:1px solid rgba(255,255,255,.05);
-  border-radius:18px;
-  padding:24px;
-  margin-bottom:18px;
-}
-
-.gold{
-  color:#ffd700;
-}
-
-/* RESPONSIVO */
-@media(max-width:980px){
-
-  .hero-grid{
-    grid-template-columns:1fr;
-  }
-
-  .hero-right{
-    order:-1;
-  }
-
-}
-
-</style>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-
-function copyAffiliateLink(){
-
-  const input =
-    document.getElementById("affiliateLink");
-
-  input.select();
-  input.setSelectionRange(0,99999);
-
-  navigator.clipboard.writeText(input.value);
-
-  alert("✅ Link copiado com sucesso!");
-}
-
-function shareWhats(){
-
-  const link =
-    document.getElementById("affiliateLink").value;
-
-  const text =
-`🚀 Internet fibra com instalação rápida!
-
-Confira os planos:
-${link}`;
-
-  window.open(
-    `https://wa.me/?text=${encodeURIComponent(text)}`,
-    "_blank"
-  );
-}
-
-function searchClients(){
-
-  const search =
-    document.getElementById("searchClient")
-    .value
-    .toLowerCase();
-
-  const filter =
-    document.getElementById("filterStatus")
-    .value
-    .toLowerCase();
-
-  const rows =
-    document.querySelectorAll("#clientTbody tr");
-
-  rows.forEach(row=>{
-
-    const text =
-      row.innerText.toLowerCase();
-
-    const visible =
-      text.includes(search) &&
-      text.includes(filter);
-
-    row.style.display =
-      visible ? "" : "none";
-  });
-}
-
-const ctx = document.getElementById('salesChart');
-
-if(ctx){
-new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['Jan','Fev','Mar','Abr','Mai','Jun'],
-        datasets: [{
-            label: 'Vendas',
-            data: [12,19,22,31,40,52],
-            tension: .4
-        }]
-    }
-});
-}
-
-</script>
+</body>
+</html>
